@@ -1,0 +1,106 @@
+<h3 class="tabh"> PLEASE ENTER BOOK DETAILS</h3>
+<div class="container">
+  <form #adduserform="ngForm" (ngSubmit)="addProductFormSubmit()">
+    <!-- <div class="form-group">
+      <label for="id">id:</label>
+      <input type="text" class="form-control" required [(ngModel)]="book.id" name="id">
+    </div> -->
+    <div class="form-group">
+      <label for="name">Book Name:</label>
+      <input type="text" class="form-control" required [(ngModel)]="book.bookName" name="name" #name="ngModel"
+      [class.is-invalid]="name.invalid && name.touched">
+      <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name Field Is Required!</small>
+    </div>
+    <div class="form-group">
+      <label for="author">Book Author:</label>
+      <input type="text" class="form-control" required [(ngModel)]="book.bookAuthor" name="author" #author="ngModel"
+      [class.is-invalid]="author.invalid && author.touched">
+      <small class="text-danger" [class.d-none]="author.valid || author.untouched">Author Field Is Required!</small>
+    </div>
+    <div class="form-group">
+      <label for="edition">Book Edition:</label>
+      <input type="text" class="form-control" required [(ngModel)]="book.bookEdition" name="edition" #edition="ngModel"
+      [class.is-invalid]="edition.invalid && edition.touched">
+      <small class="text-danger" [class.d-none]="edition.valid || edition.untouched">Edition Field Is Required!</small>
+    </div>
+    <div class="form-group">
+      <label for="price">Book Price (Please Give Price As 0 If You Wish To Donate):</label>
+      <input type="number" class="form-control" required [(ngModel)]="book.bookPrice" name="price" #price="ngModel"
+      [class.is-invalid]="price.invalid && price.touched">
+      <small class="text-danger" [class.d-none]="price.valid || price.untouched">Correct Price Is Required!</small>
+    </div>
+    <div class="form-group">
+      <label for="description">Book Description:</label>
+      <input type="text" class="form-control" required [(ngModel)]="book.bookDescription" name="description" #description="ngModel"
+      [class.is-invalid]="description.invalid && description.touched">
+      <small class="text-danger" [class.d-none]="description.valid || description.untouched">Description Field Is Required!</small>
+    </div>
+    <!-- <div class="form-group">
+        <label for="category">category:</label>
+        <input type="text" class="form-control" required [(ngModel)]="book.bookCategory" name="category">
+      </div> -->
+
+   <div class="form-group">
+      <label for="category">Book Category:</label>
+<div class="dropdown">
+    <select class="dropdown-content" (change)="selectCat($event.target.value)">
+      <option class="dropdown-content">Select Category Of Your Book</option>
+      <option class="dropdown-content" *ngFor="let catOpt of catOptions" value={{catOpt}}>{{catOpt}}</option>
+    </select>
+  </div>
+</div>
+ <!--  $event it will store the action details for the entire selected it consider as a event.. form that event i getting the value
+(change) means when ever the changes are made this is called event.... like (click) event... click is also event.. like change is also event... when ever the the changes are happen it call the respective method-->
+
+    <div class="form-group">
+      <label for="quantity">Book Quantity:</label>
+      <input type="number" class="form-control" required [(ngModel)]="book.bookQuantity" name="quantity" #quantity="ngModel"
+      [class.is-invalid]="quantity.invalid && quantity.touched">
+      <small class="text-danger" [class.d-none]="quantity.valid || quantity.untouched">Correct Quantity Is Required!</small>
+    </div>
+    <!-- <div class="form-group">
+      <label for="qualityrating">qualityrating:</label>
+      <input type="text" class="form-control" required [(ngModel)]="book.bookQualityRating" name="qualityrating">
+    </div> -->
+<div class="form-group">
+    <label for="qualityrating">Book Quality Rating:</label>
+    <div class="dropdown">
+        <select class="dropdown-content" (change)="selectQualityRating($event.target.value)">
+          <option class="dropdown-content">Select Quality Rating For Your Book (1-low, 5-high)</option>
+          <option class="dropdown-content" *ngFor="let qualityOpt of qualityROptions" value={{qualityOpt}}>{{qualityOpt}}</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- <div class="form-group">
+      <label for="contentrating">contentrating:</label>
+      <input type="text" class="form-control" required [(ngModel)]="book.bookContentRating" name="contentrating">
+    </div> -->
+<div class="form-group">
+    <label for="contentrating">Book Content Rating:</label>
+    <div class="dropdown">
+        <select class="dropdown-content" (change)="selectContentRating($event.target.value)">
+          <option class="dropdown-content">Select Content Rating For Your Book (1-low, 5-high)</option>
+          <option class="dropdown-content" *ngFor="let contentOpt of contentROptions" value={{contentOpt}}>{{contentOpt}}</option>
+        </select>
+      </div>
+    </div>
+<div class="form-group">
+      <label for="pickupdetails">Please Provide Pickup Details Like Address(State,City,Pincode,Landmark,Door Number) And Contact Details:</label>
+      <textarea class="form-control" name="pickupdetails" required [(ngModel)]="book.bookPickupDetails" cols="30" rows="5" placeholder="Please Provide In This Manner. &#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9; State:Telangana, City:Hyderabad, Pincode:500018, Landmark:Ameerpet, Door Number:101, Phone Number:1234567891." 
+      #pickupdetails="ngModel"
+      [class.is-invalid]="pickupdetails.invalid && pickupdetails.touched"></textarea>
+      <small class="text-danger" [class.d-none]="pickupdetails.valid || pickupdetails.untouched">Pickup Details Are Required!</small>
+    </div>
+    
+    <div class="form-group">
+      <label for="image">Please Provide Book Image Url:</label>
+      <input type="text" class="form-control"  [(ngModel)]="book.bookImageUrl" name="imageurl" >
+    </div>
+
+
+
+    <button type="back" class="btn btn-danger float-left " [routerLink]="['/productlist']">Back</button>
+    <button type="submit"  [disabled]="adduserform.form.invalid" class="btn btn-success tabsubmit" >Submit</button>
+  </form>
+</div>

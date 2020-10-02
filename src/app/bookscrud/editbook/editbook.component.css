@@ -1,0 +1,25 @@
+.dropdown {  
+    margin-top: 10px;
+    margin-bottom: 13px;  
+  }
+  
+  .dropdown-content {
+    width: 1110px;
+    height: 40px;
+    border-radius: 4px;
+    border-color: lightgrey;
+  }
+
+  .tabsubmit{
+    display: inline-block;
+    margin-left: 530px;
+    width: 200px;
+    margin-bottom: 15px;
+  }
+
+  .tabh{
+    display: inline-block;
+    margin-left: 500px;
+    color: lightseagreen;
+    margin-top: 10px;
+  }

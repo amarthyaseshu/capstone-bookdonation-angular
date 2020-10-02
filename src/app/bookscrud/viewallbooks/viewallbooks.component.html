@@ -1,0 +1,23 @@
+<div class="searchbar">
+    <input type="text"  class="txt" placeholder="                               Search Books By Name" />
+  </div>
+  <div class="row">
+
+    <div class="col-lg-4 col-md-6 mb-4" *ngFor="let book of booklist">
+      <div class="card h-100">
+  <button (click)="goToViewProduct(book.id)" class="nostyle">  <img class="card-img-top" src="{{book.bookImageUrl}}" width="300px" height="300px" alt=""> </button>
+        <div class="card-body">
+          <h4 class="card-title" style="color: red;">
+          {{book.bookName}}
+          </h4>
+          <p class="card-text" style="color:blue;">Author: {{book.bookAuthor}}</p>
+          <h6 class="card-text" style="color: orangered;">Edition: {{book.bookEdition}}</h6>
+          <h6 class="card-text" style="color: green;">{{book.bookPrice | currency:'INR'}}</h6>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted" style="font-size: 16px;">Rating: {{book.bookContentRating}} <span class="text-warning">&#9733;</span></small>
+        </div>
+        <button type="button" class="btn btn-info" (click)="goToViewProduct(book.id)">View/Buy</button>
+      </div>
+     
+    </div>

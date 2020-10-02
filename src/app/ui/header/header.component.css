@@ -1,0 +1,9 @@
+.hov:hover{
+    background-color: lightgrey;
+    border-radius: 10px;
+    }
+    
+    .mov{
+        margin:8px;
+        margin-left: 20px;
+    }

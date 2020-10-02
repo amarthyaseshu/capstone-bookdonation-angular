@@ -1,0 +1,58 @@
+<div class="container" style="max-width: 100%;min-height: 600px;background-color: whitesmoke;">
+    <h2 class="textual">Register Here</h2>
+    <form #Registerform="ngForm" (ngSubmit)="registerUser()">
+        <small class="text-danger">  {{msg}}</small>
+      <!-- <small [class.text-danger]="msg.status==500">  {{msg.message}}</small> -->
+       <!-- for email id -->
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control"  placeholder="Enter email" name="email" [(ngModel)]="user.userMail" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+         #email="ngModel"
+        [class.is-invalid]="email.invalid && email.touched">
+        <!-- <small class="text-danger" [class.d-none]="email.valid || email.untouched">Proper Email ID Is Required!</small> -->
+
+        <!-- error message based on type of error -->
+<div *ngIf="email.errors && (email.invalid && email.touched)">
+  <small class="text-danger" *ngIf="email.errors.required">Email ID is required field</small>
+  <small class="text-danger" *ngIf="email.errors.pattern">Enter The Valid Email ID</small>
+</div>
+      </div>
+
+ 
+      <!-- for username -->
+      <div class="form-group">
+        <label for="username">UserName:</label>
+        <input type="text" class="form-control"  placeholder="Enter UserName" name="username" [(ngModel)]="user.userName" required #username="ngModel"
+        [class.is-invalid]="username.invalid && username.touched">
+        <small class="text-danger" [class.d-none]="username.valid || username.untouched">UserName Is Required!</small>
+      </div>
+
+      <!-- for mobile  number -->
+ <div class="form-group">
+  <label for="phone">Enter your phone number:</label>
+  <input type="tel" class="form-control"  placeholder="Enter Your Mobile Number" name="mobilenumber" [(ngModel)]="user.userMobile" required #mobilenumber="ngModel"
+  pattern="[0-9]{10}"
+  [class.is-invalid]="mobilenumber.invalid && mobilenumber.touched">
+  <small class="text-danger" [class.d-none]="mobilenumber.valid || mobilenumber.untouched">Correct Mobile Number Is Required!</small>
+</div>
+     
+      <!-- for password -->
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control"  placeholder="Enter password" name="password" [(ngModel)]="user.userPassword" required #password="ngModel"
+        [class.is-invalid]="password.invalid && password.touched">
+        <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password Field Is Required!</small>
+      </div>
+
+      <!-- for confirm password -->
+      <div class="form-group">
+        <label for="pwd">Confirm Password:</label>
+        <input type="password" class="form-control"  placeholder="Confirm Your Password" name="cpassword"  required #cpassword="ngModel" (ngModel)="user.userPassword"
+        [class.is-invalid]="cpassword.invalid && cpassword.touched">
+        <small class="text-danger" [class.d-none]="(cpassword.value==password.value) || cpassword.untouched">Please Ensure You are Providing Correct Password!</small>
+      </div>
+      <button [disabled]="Registerform.form.invalid" type="submit" class="btn btn-info">Register</button>
+      <small class= "float-right" [routerLink]="['/login']">Existing User? <button class="btn btn-info" >Login Here</button> </small>
+    </form>
+   
+  </div>

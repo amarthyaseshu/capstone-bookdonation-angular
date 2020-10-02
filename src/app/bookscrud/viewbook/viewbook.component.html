@@ -1,0 +1,88 @@
+<app-header></app-header><br><br><br>
+
+
+<div class="container pt-4 " >
+ 
+  <div class="row">
+   
+    <div class="col-lg-3">
+     
+      <app-sidebar></app-sidebar>
+
+    </div>
+
+    <div class="col-lg-9">
+    
+
+<!-- start of view book -->
+
+<div class="card mt-5 mr-5">
+    <img class="card-img-top " src="{{book.bookImageUrl}}"  height="580px" alt="">
+    <div class="card-body">
+      <h3 class="card-title" style="color: red;">{{book.bookName}}</h3><br>
+      <h5 class="card-text" style="color:blue;">Author: {{book.bookAuthor}}</h5><br>
+    <h5 class="card-text" style="color: orangered;">Edition: {{book.bookEdition}}</h5><br>
+      <h5 class="card-text" style="color:slateblue;">Category: {{book.bookCategory}}</h5><br>
+      <h5 class="card-text" style="color: green;">{{book.bookPrice | currency:'INR'}}</h5><br>
+    </div>
+  </div>
+  
+
+  <div class="card card-outline-secondary my-4">
+    <div class="card-header">
+      Other Details
+    </div>
+    <div class="card-body">
+      <h5 class="card-text" style="color: purple;">  Book Description By Seller</h5>
+      <p>{{book.bookDescription}}</p>
+      <hr>
+      <h5 class="card-text" style="color: purple;">  Book Seller Contact/Location Details</h5>
+      <p>{{book.bookPickupDetails}}</p>
+      <hr>
+      <h5 class="card-text" style="color: yellowgreen;">  Book Quality Rating And Content Rating</h5>
+      <p>Please Note That Quality Rating Is Related To Book Condition And Content Rating Is Related To Book Content Solely Given By Seller</p>
+      <small class="text-muted" style="font-size: 16px;">Book Content Rating: {{book.bookContentRating}} <span class="text-warning">&#9733;</span></small><br>
+      <small class="text-muted" style="font-size: 16px;">Book Quality Rating: {{book.bookQualityRating}} <span class="text-warning">&#9733;</span></small>
+      
+      <!-- <a href="#" class="btn btn-success">Leave a Review</a> -->
+    </div>
+  </div>
+
+  <div class="card card-outline-secondary my-4">
+    <div class="card-header">
+      Buy Book
+    </div>
+    <div class="card-body"> 
+      <a href="#" class="btn btn-info" style="width: 100%;">Add To Cart</a><hr>
+      <button type="back" class="btn btn-success" style="width: 100%;" [routerLink]="['/']">View Other Books</button>
+      
+    </div>
+  </div>
+
+  <div class="card card-outline-secondary my-4">
+    <div class="card-header">
+      Update/Delete Book
+    </div>
+    <div class="card-body"> 
+      <button type="button" class="btn" style="width: 100%;background-color: orangered; color: yellowgreen;" (click)="goToEditProduct(book.id)">Edit Book</button><hr>
+      <button type="button" class="btn btn-danger" style="width: 100%;" (click)="deleteProduct(book.id)">Delete Book</button>
+    </div>
+  </div>
+
+
+
+<!-- end of view book -->
+
+
+
+
+
+
+
+    </div> 
+
+   </div>  
+
+</div> 
+
+<app-footer></app-footer>

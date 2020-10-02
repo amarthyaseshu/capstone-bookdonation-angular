@@ -1,0 +1,74 @@
+<section>
+    <div class="container">
+        <div class="contactinfo">
+            <div>
+                <h2>Contact Info</h2>
+                <ul class="info">
+                    <li>
+                        <span><img src="../../assets/location_on-24px.svg" alt="location"></span>
+                        <span>0007 merjvoln road <br>
+                        Hyderabad, ca <br>
+                    500018</span>
+                    </li>
+                    <li>
+                        <span><img src="../../assets/mail-24px.svg" alt="mail"></span>
+                        <span>amarthyaseshu2@gmail.com</span>
+                    </li>
+                    <li>
+                        <span><img src="../../assets/call-24px.svg" alt="call"></span>
+                        <span>814-311-4682</span>
+                    </li>
+                </ul>
+            </div>
+                <ul class="sci">
+                    <li><a href="https://www.facebook.com/profile.php?id=100008511823768" target="_blank"><img height="30px" width="30px" src="../../assets/facebook-24px.svg" alt="facebook"></a></li>
+                    <li><a href="https://www.instagram.com/am_rthya/" target="_blank"><img height="30px" width="30px" src="../../assets/instagram.svg" alt="instagram"></a></li>
+                    <li><a href="https://www.linkedin.com/in/amarthya-seshu/" target="_blank"><img height="30px" width="30px" src="../../assets/linkedin.svg" alt="linkedin"></a></li>
+                    <li><a href="https://github.com/amarthyaseshu" target="_blank"><img height="30px" width="30px" src="../../assets/iconfinder_github_291716.png" alt="github"></a></li>
+                </ul>
+           
+        </div>
+       
+    <div class="contactForm">
+        <h2>Send a Message</h2>
+        <form #Contactform="ngForm" (ngSubmit)="addContact()">
+            <small class="text-danger">  {{msg}}</small>
+        <div class="formBox">
+            <div class="inputBox w50">
+                <input type="text" name="name" required  [(ngModel)]="contact.name">
+                <span>Name</span>
+            </div>
+           
+           
+            <div class="inputBox w50">
+                <input type="text" name="email" required [(ngModel)]="contact.email">
+                <span>Email</span>
+            </div>
+            <div class="inputBox w50">
+                <input type="text" name="mobile" required [(ngModel)]="contact.mobile">
+                <span>Mobile Number</span>
+            </div>
+
+            <div class="inputBox w50">
+                <textarea name="company"  required [(ngModel)]="contact.company"></textarea>
+                <span>Company</span>
+            </div>
+
+             <div class="inputBox w50">
+                <textarea name="subject"  required [(ngModel)]="contact.subject"></textarea>
+                <span>Subject</span>
+            </div>
+            <div class="inputBox w100">
+               <textarea name="message"  required [(ngModel)]="contact.message"></textarea>
+                <span>Write Your Message Here</span>
+            </div>
+        
+        </div>
+     <div class="submitbutton">
+        <input class="btn btn-dark" [disabled]="Contactform.form.invalid" type="submit" value="Submit">
+    </div>
+</form>
+    </div>
+
+    </div>
+    </section>

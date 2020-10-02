@@ -1,0 +1,29 @@
+.searchbar {
+    float: inherit;
+    padding: 35px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    border-radius: 75%;
+    font-size: 17px;
+    border: none;
+    
+  }
+  
+  .txt{
+    height: 50px;
+    width: 600px;
+    border-radius: 7px;
+  }
+
+.nostyle{
+  border: none; background: none; padding: 0;
+}
+
+  .nostyle:focus{
+outline: none;
+  }
+
+  .card-title{
+    font-size: 18px;
+    font-weight: 600;
+  }

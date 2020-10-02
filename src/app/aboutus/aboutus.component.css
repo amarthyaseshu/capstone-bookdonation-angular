@@ -1,0 +1,42 @@
+.heading{
+    text-align: center;
+    margin-bottom: 20px;
+    margin-left: 80px;
+    }
+    
+    body{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: lightblue;
+       
+    }
+    
+    #aboutus h2{
+        margin-bottom: 40px;
+    }
+    
+    .img-wrap{
+        width: 50%;
+        margin-top: 160px;
+        margin-left: 50px;
+    }
+    .img-wrap img{
+        width: 100%;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #999999;
+    }
+    
+    .button{
+        margin-top: 45px;
+        margin-left: 240px;
+    background-color: orangered;
+    }
+    
+    .button a{
+        text-decoration: none;
+        color: black;
+    
+    }
