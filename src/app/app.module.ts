@@ -17,6 +17,7 @@ import { ViewallbooksComponent } from './bookscrud/viewallbooks/viewallbooks.com
 import { ViewbookComponent } from './bookscrud/viewbook/viewbook.component';
 import { AddbookComponent } from './bookscrud/addbook/addbook.component';
 import { EditbookComponent } from './bookscrud/editbook/editbook.component';
+import { SearchPipe } from './search.pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { EditbookComponent } from './bookscrud/editbook/editbook.component';
     ViewallbooksComponent,
     ViewbookComponent,
     AddbookComponent,
-    EditbookComponent
+    EditbookComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

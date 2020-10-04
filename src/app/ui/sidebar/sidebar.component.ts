@@ -1,3 +1,4 @@
+import { InfoService } from './../../service/info.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  value:string;
+  constructor(private info:InfoService) { }
 
   ngOnInit(): void {
+    this.info.currentValue.subscribe((value)=>(this.value=value));
+  }
+
+  setValue(val: string) {
+    this.info.changeValue(val);
   }
 
 }

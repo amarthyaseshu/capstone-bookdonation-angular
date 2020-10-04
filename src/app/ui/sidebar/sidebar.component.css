@@ -1,3 +1,13 @@
 .tex{
     text-decoration: none;
 }
+
+button{
+    color: blue;
+}
+
+
+button:hover{
+background-color: yellowgreen;
+color: white;
+}
