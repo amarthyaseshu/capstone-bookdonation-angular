@@ -1,6 +1,20 @@
-# Bookdonate
+# Book Donation/Selling
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0.
+
+A full stack e-commerce application which can be used to donate, buy or sell your used books
+Languages And Frame Works Used: HTML, CSS, BootStrap, JavaScript, TypeScript, Angular, Java, Spring Boot, Mysql, Postman(for testing)
+
+
+
+
+
+
+
+
+
+
+
 
 ## Development server
 
